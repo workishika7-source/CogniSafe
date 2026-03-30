@@ -53,7 +53,7 @@
 
 CogniSafe is a **non-invasive, voice-first cognitive health monitoring platform** that leverages artificial intelligence to detect early signs of cognitive decline through speech analysis.
 
-Instead of expensive MRI scans ($1,000–$3,000) or clinical neuropsychological tests ($500–$2,000), CogniSafe asks you to speak for just **2 minutes** — describing a picture using a clinically-validated task — and then lets advanced AI models analyze your speech.
+Instead of expensive MRI scans ($1,000–$3,000) or clinical neuropsychological tests ($500–$2,000), CogniSafe asks you to speak for just **3 minutes** — describing a picture using a clinically-validated task — and then lets advanced AI models analyze your speech.
 
 ### 🎯 Who is it for?
 
