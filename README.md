@@ -309,65 +309,8 @@ The AI pipeline is the **heart of CogniSafe**. It accepts a raw audio file and r
 ### Pipeline Architecture
 
 ```
-           Input: Audio File
-        (WebM, WAV, MP3, M4A, OGG)
-                   │
-                   ▼
-   ┌───────────────────────────────┐
-   │  Stage 1: Format Conversion   │
-   │  (ffmpeg)                     │
-   │  WebM/MP4 → 16kHz mono WAV    │
-   │  Duration validation          │
-   └───────────┬───────────────────┘
-               │
-               ▼
-   ┌───────────────────────────────┐
-   │  Stage 2: Speech-to-Text      │
-   │  (OpenAI Whisper Base)        │
-   │  • Full transcription         │
-   │  • Word-level timestamps      │
-   │  • Pause detection            │
-   │  • Confidence scores          │
-   └───────────┬───────────────────┘
-               │
-               ▼
-   ┌───────────────────────────────┐
-   │  Stage 3: Acoustic Features   │
-   │  (openSMILE eGeMAPS)          │
-   │  • Pitch (F0, range, contour) │
-   │  • Jitter & Shimmer           │
-   │  • Harmonics-to-Noise Ratio   │
-   │  • Speech rate & pauses       │
-   │  • 88 features → 10 extracted │
-   └───────────┬───────────────────┘
-               │
-               ▼
-   ┌───────────────────────────────┐
-   │  Stage 4: NLP Features        │
-   │  (spaCy + MiniLM-L6-v2)       │
-   │  • Semantic coherence         │
-   │  • Lexical diversity (MTLD)   │
-   │  • Idea density               │
-   │  • Syntactic complexity       │
-   └───────────┬───────────────────┘
-               │
-               ▼
-   ┌───────────────────────────────┐
-   │  Stage 5: Anomaly Detection   │
-   │  (scikit-learn)               │
-   │  • Compare vs personal        │
-   │    baseline                   │
-   │  • 2-sigma deviation calc     │
-   │  • SQLite historical tracking │
-   │  • Risk tier assignment       │
-   │  • Confidence intervals       │
-   └───────────┬───────────────────┘
-               │
-               ▼
-           JSON Response
-      (14 biomarkers + risk tier
-           + anomaly flags
-       + confidence intervals)
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/ee4fd61f-d2c6-4bbb-8c44-d28f39e311ac" />
+
 ```
 
 ### Tech Stack — ML
