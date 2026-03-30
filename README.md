@@ -666,7 +666,7 @@ launch        mobile app     Insurance      Device          Trial API]
 
 | Member | Role | GitHub | 
 |---|---|---|
-| Ishika Rawat | 🎨 Frontend Engineer | [@workishika7-source](https://github.com/workishika7-source) |
+| Ishika Rawat | 🎨 Frontend Engineer | [@workishika7-source](https://github.com/ishikarawatt) |
 | Farjan Alam | 🤖 AI/ML | [@alamfarzan](https://github.com/alamfarzan) |
 | Vansh Singh | ⚙️ Backend Engineer | [@vanshsingh](https://github.com/vanshsingh) |
 | Akansha Parley | 📋 Product & Demo | [@akanshaparley](https://github.com/akanshaparley) | 
