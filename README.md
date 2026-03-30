@@ -90,9 +90,9 @@ By that point, meaningful intervention windows have often closed.
 CogniSafe closes these gaps with:
 
 ✅ **Early Detection** — Detects statistically significant changes years before clinical diagnosis  
-✅ **Affordable** — $15/month vs. $1,000+ per clinical assessment  
+✅ **Affordable** — FREE vs. $1,000+ per clinical assessment  
 ✅ **Accessible** — Requires only a smartphone and internet; works from home  
-✅ **Longitudinal** — Daily 2-minute sessions build a personal health baseline over time  
+✅ **Longitudinal** — Daily 3-minute sessions build a personal health baseline over time  
 ✅ **Family-Friendly** — Plain-language dashboard designed for non-clinicians  
 ✅ **Evidence-Based** — Built on 15+ years of peer-reviewed voice biomarker research  
 
@@ -103,7 +103,7 @@ CogniSafe closes these gaps with:
 ## ✨ Key Features
 
 ### 🎙️ Voice Session Recording
-- **Daily 2-minute sessions** with a validated picture description task
+- **Daily 3-minute sessions** with a validated picture description task
 - **Live voice orb** that pulses in real-time with your speech amplitude
 - **WebRTC audio capture** directly in the browser — no app download needed
 - Automatic conversion and processing of browser-recorded audio
@@ -114,7 +114,7 @@ CogniSafe closes these gaps with:
   - Pitch, jitter, shimmer, harmonics-to-noise ratio, articulation rate, pauses, etc.
 - **4 NLP Biomarkers** — extracted via spaCy + sentence-transformers
   - Semantic coherence, lexical diversity, idea density, syntactic complexity
-- **Full analysis returned in under 90 seconds** on CPU
+- **Full analysis returned in under 240 seconds** on CPU
 
 ### 🔴 Risk Tier System
 
@@ -304,7 +304,7 @@ The CogniSafe platform is built as a **distributed system** with three main comp
 
 > **Deployed at:** `https://alamfarzann-cognisafe-ml.hf.space`
 
-The AI pipeline is the **heart of CogniSafe**. It accepts a raw audio file and returns a complete cognitive health snapshot in under **90 seconds on CPU**.
+The AI pipeline is the **heart of CogniSafe**. It accepts a raw audio file and returns a complete cognitive health snapshot in under **240 seconds on CPU**.
 
 ### Pipeline Architecture
 
@@ -353,7 +353,7 @@ CogniSafe analyzes **14 clinically-validated voice biomarkers** across acoustic 
 | 14 | `syntactic_complexity` | NLP | Average parse tree depth | Complexity ↓ = simplified speech |
 
 > **All biomarkers are compared against the user's own baseline** — not population norms. This enables personalized, sensitive detection of *individual drift*.
-
+👉 [AI/ML Documentation](./cognisafe-deploy/README.md)
 ---
 
 ## 🖥️ Frontend
@@ -438,7 +438,7 @@ Handles authentication, session persistence, trend calculations, and report gene
 
 | Method | Endpoint | Purpose |
 |---|---|---|
-| `GET` | `/api/trends` | Get biomarker trend data (90 days) |
+| `GET` | `/api/trends` | Get biomarker trend data (30 days) |
 | `POST` | `/api/reports/generate` | Generate AI health report |
 | `GET` | `/api/reports/{id}` | Download generated report |
 
@@ -448,13 +448,6 @@ Handles authentication, session persistence, trend calculations, and report gene
 |---|---|---|
 | `POST` | `/api/caregiver/link` | Create share link for family |
 | `GET` | `/api/caregiver/view/{token}` | Caregiver-accessible dashboard |
-
-### Example Request
-
-```shell
-curl -X GET https://api.example.com/api/sessions/today \
-  -H "Authorization: Bearer <your_jwt_token>"
-```
 
 ---
 
@@ -469,7 +462,7 @@ This project is a **full-stack application** with three independent services:
 ### Prerequisites
 
 - Python 3.11+
-- Node.js 18+
+- FastAPI 18+
 - PostgreSQL 14+
 - ffmpeg (`brew install ffmpeg` / `choco install ffmpeg`)
 
@@ -671,12 +664,12 @@ launch        mobile app     Insurance      Device          Trial API]
 
 **Team FAIV** — Built at *Watch The Code Hackathon 2026*
 
-| Member | Role | GitHub | LinkedIn |
-|---|---|---|---|
-| Farjan Alam | 🤖 AI/ML Lead | [@alamfarzan](https://github.com/alamfarzan) | [LinkedIn](https://linkedin.com) |
-| Vansh Singh | ⚙️ Backend Engineer | [@vanshsingh](https://github.com/vanshsingh) | [LinkedIn](https://linkedin.com) |
-| Ishika Rawat | 🎨 Frontend Engineer | [@workishika7-source](https://github.com/workishika7-source) | [LinkedIn](https://linkedin.com) |
-| Akansha Parley | 📋 Product & Demo | [@akanshaparley](https://github.com/akanshaparley) | [LinkedIn](https://linkedin.com) |
+| Member | Role | GitHub | 
+|---|---|---|
+| Ishika Rawat | 🎨 Frontend Engineer | [@workishika7-source](https://github.com/workishika7-source) |
+| Farjan Alam | 🤖 AI/ML | [@alamfarzan](https://github.com/alamfarzan) |
+| Vansh Singh | ⚙️ Backend Engineer | [@vanshsingh](https://github.com/vanshsingh) |
+| Akansha Parley | 📋 Product & Demo | [@akanshaparley](https://github.com/akanshaparley) | 
 
 ---
 
@@ -703,7 +696,6 @@ Every 3 seconds, someone develops dementia.
 <br/>
 
 [![Live Demo](https://img.shields.io/badge/🌐%20Live%20Demo-cogni--safe.vercel.app-E8A020?style=for-the-badge)](https://cogni-safe.vercel.app)
-[![GitHub](https://img.shields.io/badge/GitHub-workishika7--source%2FCogniSafe-0A1628?style=for-the-badge&logo=github)](https://github.com/workishika7-source/CogniSafe)
 [![HuggingFace](https://img.shields.io/badge/🤗%20ML%20API-HuggingFace%20Spaces-FF9D00?style=for-the-badge)](https://alamfarzann-cognisafe-ml.hf.space/health)
 
 </div>
